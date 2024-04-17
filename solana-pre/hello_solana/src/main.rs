@@ -19,4 +19,19 @@ fn main() {
 
     println!("Different numbers => {} {} {}", unsigned, signed, float);
 
+
+    // char is used for a single character
+    let character: char = 'a';
+    println!("Caracter => {}", character);
+
+    // boolean is used for true r false
+    let boolean: bool = true;
+    println!("Boolean => {}", boolean);
+
+    // tuple is a non-homogeneous container that groups/stores
+    // different data types.
+    // the 'Debug' trat allows for printing data structures contents
+    // like tuples, arrays, hashmaps etc
+    let tuple: (i32, i32, f64, i32, bool) = (1, -2, 3.0, 4, true);
+    println!("Tuple => {:?}", tuple);
 }
