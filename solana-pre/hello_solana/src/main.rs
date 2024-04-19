@@ -4,7 +4,7 @@ fn main() {
     let b: i32 = 15;
     println!("Hello, world!, {} {}", a,b);
 
-    // Dat types
+    // Data types
 
     // unsigned integer
     // u8, u16, u32, u64, u128
@@ -24,13 +24,13 @@ fn main() {
     let character: char = 'a';
     println!("Caracter => {}", character);
 
-    // boolean is used for true r false
+    // boolean is used for true or false
     let boolean: bool = true;
     println!("Boolean => {}", boolean);
 
     // tuple is a non-homogeneous container that groups/stores
     // different data types.
-    // the 'Debug' trat allows for printing data structures contents
+    // the 'Debug' trait allows for printing data structure contents
     // like tuples, arrays, hashmaps etc
     let tuple: (i32, i32, f64, i32, bool) = (1, -2, 3.0, 4, true);
     println!("Tuple => {:?}", tuple);
