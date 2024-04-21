@@ -1,0 +1,1 @@
+/home/lemuel/Documents/web-3-work-and-projects/rust-webthree-portfolio/rust-run-through/intro_to_rust/target/debug/intro_to_rust: /home/lemuel/Documents/web-3-work-and-projects/rust-webthree-portfolio/rust-run-through/intro_to_rust/src/main.rs
