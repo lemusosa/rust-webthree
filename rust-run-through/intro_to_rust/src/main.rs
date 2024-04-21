@@ -253,5 +253,5 @@ fn main() {
     // Use descriptive function and variable names to make your code more readable
     // Avoid using global variables whenever possible. Instea, pass data as function
     // or use closures.
-    // Use enums and mach statements to handle complex control flow scenarios
+    // Use enums and mach statements to handle complex control flow scent=arios
 }
