@@ -66,7 +66,7 @@ fn main() {
     let letter_a: char = 'a';
 
     // Strings represent a sequence of Unicode characters.
-    // &str: is a reference to a tring slice. Are immutable by default
+    // &str: is a reference to a string slice. Are immutable by default
     // String: is a growable string type. Can be mutable as they a re growable.
     // a string slice is decalred using the & operator followed by the string literal
     let message: &str = "Hello, world!";
@@ -83,7 +83,7 @@ fn main() {
     let third_number = numbers[2];
     print!("the htird number in the array is {}", third_number);
 
-    // SLICES: represents a variable-size view into a contiguous sequene of
+    // SLICES: represents a variable-size view into a contiguous sequence of
     // elements of the same type.
 
     let slice = &numbers[1..3];
@@ -103,32 +103,155 @@ fn main() {
     // Nested tuples
 
     let persons = (("Alice", "Bob"), 30);
-    println!("The person's name is {} {} and their age is {}.", person.0.0, person.0.1,
-    person.1);
-
+    println!(
+        "The person's name is {} {} and their age is {}.",
+        person.0 .0, person.0 .1, person.1
+    );
 
     // Unit type: a data type that ha no meaningful infromation
 
-let result = do_something();
-println!("The result is {}.", result);
+    let result = do_something();
+    println!("The result is {}.", result);
 
-// Variables: are immuatble by default unless you prepend the mut keyword
-// if immutable it means you cannot change the value after declaring it.
+    // Variables: are immuatble by default unless you prepend the mut keyword
+    // if immutable it means you cannot change the value after declaring it.
 
-let xy: i32 = 42;
+    let xy: i32 = 42;
 
-let xz: i32 = 42; // immutable variable/owner
-xz = 10; // error: cannot assign twice to immutable variable unless you shadow
+    let xz: i32 = 42; // immutable variable/owner
+    xz = 10; // error: cannot assign twice to immutable variable unless you shadow
 
-// making a variable mutable
-let mut xa: i32 = 42; // mutable variable
-xa = 10; T// Correct!
+    // making a variable mutable
+    let mut xa: i32 = 42; // mutable variable
+    xa = 10; // Correct!
 
-// type inference example: implicit types
-let y = 3.14; // Rust infers the type as f64
+    // type inference example: implicit types
+    let y = 3.14; // Rust infers the type as f64
 
-// Shadowing in rust
-let xb = 42;
-let xb = xb + 1;
+    // Shadowing in rust
+    let xb = 42;
+    let xb = xb + 1;
 
+    // FUNCTIONS IN RUST
+
+    // Syntax and Structure of Functions
+    fn add_numbers(x: i32, y: i32) -> i32 {
+        let result = x + y;
+        return result;
+    }
+
+    // Function Arguments and Return Types
+
+    fn get_greeting() -> String {
+        return String::from("Hello, Rust!");
+    }
+
+    // Passing Parameters to a Function
+    fn add_numbers_two(a: i32, b: i32) -> i32 {
+        let result = a + b;
+        return result;
+    }
+
+    // calling the above function
+    let sum = add_numbers_two(3, 5);
+
+    // Default parameters: not support in rust function sbut an Option can be used to
+    // simulate default parameter behaviour
+    fn greet(name: Option<&str>) {
+        match name {
+            Some(n) => println!("Hello, {}!", n),
+            None => println!("Hello, Rust!"),
+        }
+    }
+    // Returning Values from a function
+    fn get_new_greeting(name: &str) -> String {
+        let greeting = format!("Hello, {}!", name);
+        return greeting;
+    }
+
+    // Control Flow: lthree loops: while, for and loop
+
+    // Condtional Statements: if, else if, else used for creating conditional statements
+    let x = 5;
+
+    // if conditonal statement: if this do that, else if do that and if not then just do the rest
+
+    if x > 10 {
+        println!("x is greater than 10");
+    } else if x < 10 {
+        println!("x is less than 10");
+    } else {
+        print!("x is equal to 10");
+    }
+
+    // While Loop: execute while a specific condition is true, stop when it is not.
+
+    let mut counter = 0;
+
+    while counter < 10 {
+        print!("Counter value is {}", counter);
+        counter += 1;
+    }
+
+    // For Loop: Ussed to iterate over a collection of items
+    let numbers = vec!["1,2,3,4,5,6,7"];
+
+    for number in numbers {
+        print!("Number is {}", number);
+    }
+
+    // Loop: creates an ifninte loop which can be exited using a break statement.
+    // the following just reads: increment ounter by one until 7 is reached.
+    let mut counter = 0;
+
+    loop {
+        println!("Counter value is {}", counter);
+        counter += 1;
+
+        if counter == 7 {
+            break;
+        }
+    }
+
+    // Match:: a control flow construct in rust that allows us to match a value
+    // agaisnt a series of patterns and execute corresponding code based on pattern matching
+    // it provides exaustive pattenr matching which gv=ives it the ability to handle all 
+    // possibilities
+
+    let any_number: i8 = 5;
+
+    match any_number {
+        // each statement elow is a match arm
+        1 => println!("The number is one!"),
+        2 => println!("The number is two!"),
+        3 => println!("The number is three!"),
+        _ => println!("The number is something else!"),
+    }
+
+    let new_num = 10;
+
+    let result = match new_num {
+        1 => "The number is one!",
+        2 => "The number is two!",
+        3 => "The number is three!",
+        _ => "The number is something else!",
+    };
+
+    println!("{}", result);
+
+    // CODING CONVENTIONS AND STYLE GUDIELINES (RUST STYLE GUIDE)
+
+    // Use snake_case for variable and function names.
+    // use spaces around operators and after commas
+    // use two spaces for indentations
+    // use doc ommentions for documenting your code
+    // Kepp your lines short (less than 80 characters) to improve readability
+
+    // WRITING REUSABLE AND MAINTAINABLE CODE
+
+    // Keep your fnctions short and focused on a single task
+    // Use descriptive function and variable names to make your code more readable
+    // Avoid using global variables whenever possible. Instea, pass data as function
+    // or use closures.
+    // Use enums and mach statements to handle complex control flow scenarios
 }
