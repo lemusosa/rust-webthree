@@ -1,16 +1,21 @@
-const character = "Solomon";
+// Type basics
+let character = "Solomon";
+let age = 10; // number types floating and integer
+let isLayerOne = false;
 
-console.log(character);
+// charcter = 20 is not a valid statement
+character = "Solomon Web3";
 
-const inputs = document.querySelectorAll('input');
+// age = "Satoshi"
+age = 40;
 
-console.log(inputs);
+// isLayerOne = "yes";
+isLayerOne = true;
 
-inputs.forEach(input => {
-    console.log(input);
-});
+// Functions param types
+const circ = (diameter: number) => {
+    // Math s an object in JS/TS
+    return diameter*Math.PI;
+}
 
-// tsc sandbox.ts generates a sandbox.js file so need to manually create a sandbox.js file
-// tsc sandbox.ts sandbox.js compiles to sandbox.js if the sandbox.js file is pre-exsitent
-// tsc sandbox.ts -w stands for watch. this command allows us to automatically 
-// transpile ts into js when changes are made.
+console.log(circ(7.9));

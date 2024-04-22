@@ -1,11 +1,18 @@
+// Type basics
 var character = "Solomon";
-console.log(character);
-var inputs = document.querySelectorAll('input');
-console.log(inputs);
-inputs.forEach(function (input) {
-    console.log(input);
-});
-// tsc sandbox.ts generates a sandbox.js file so need to manually create a sandbox.js file
-// tsc sandbox.ts sandbox.js compiles to sandbox.js if the sandbox.js file is pre-exsitent
-// tsc sandbox.ts -w stands for watch. this command allows us to automatically 
-// transpile ts into js when changes are made.
+var age = 10; // number types floating and integer
+var isLayerOne = false;
+// charcter = 20 is not a valid statement
+character = "Solomon Web3";
+// age = "Satoshi"
+age = 40;
+// isLayerOne = "yes";
+isLayerOne = true;
+// Functions param types
+var circ = function (diameter) {
+    // Math s an object in JS/TS
+    return diameter * Math.PI;
+};
+console.log(circ(7.9));
+
+// type cheking is done at compile time, not at runtime.
